@@ -13,7 +13,7 @@
         "courseName": "Introduction to Algorithms",
         "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 59.99,
-        "credit": 4
+        "credit": 10
     },
     {
         "id": 3,
@@ -29,7 +29,7 @@
         "courseName": "Basic Data Structures",
         "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 69.99,
-        "credit": 4
+        "credit": 1
     },
     {
         "id": 5,
@@ -45,7 +45,7 @@
         "courseName": "Software Engineering",
         "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 74.99,
-        "credit": 5
+        "credit": 15
     },
     {
         "id": 7,
@@ -69,6 +69,6 @@
         "courseName": "Problem-Solving Part",
         "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 69.99,
-        "credit": 4
+        "credit": 1
     }
 ]
