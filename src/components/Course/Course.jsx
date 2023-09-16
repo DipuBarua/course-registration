@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FiDollarSign } from 'react-icons/fi';
 import { BsBook } from 'react-icons/bs';
 
@@ -13,13 +14,13 @@ const Course = ({ course, handleCourseRegistration, handleTotalPrice, handleTota
                 <p className=" text-sm font-normal">{details}</p>
 
                 <div className=" flex justify-between text-base font-medium">
-                    <div className='flex gap-3'>
-                        <FiDollarSign></FiDollarSign>
-                        <span>Price : {price}</span>
+                    <div className='flex gap-1'>
+                        <FiDollarSign className=' mt-1'></FiDollarSign>
+                        <span>Price: {price}</span>
                     </div>
-                    <div className='flex gap-3'>
-                        <span><BsBook></BsBook></span>
-                        <span>Credit : {credit}hr</span>
+                    <div className='flex gap-1'>
+                        <span><BsBook className=' mt-1'></BsBook></span>
+                        <span>Credit: {credit}hr</span>
                     </div>
                 </div>
                 <button onClick={() => { handleCourseRegistration(course); handleTotalPrice(price); handleTotalCredit(credit); handleRemainingCredit(credit) }} className=" w-full bg-blue-500 rounded-lg p-2 text-white">Select</button>
@@ -29,4 +30,11 @@ const Course = ({ course, handleCourseRegistration, handleTotalPrice, handleTota
     );
 };
 
+Course.propTypes = {
+    course: PropTypes.object,
+    handleCourseRegistration: PropTypes.func,
+    handleTotalPrice: PropTypes.func,
+    handleTotalCredit: PropTypes.func,
+    handleRemainingCredit: PropTypes.func,
+}
 export default Course;
