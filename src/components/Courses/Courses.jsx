@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Course from "../Course/course";
 import { useState } from "react";
 
-const Courses = ({ handleCourseRegistration, handleTotalPrice }) => {
+const Courses = ({ handleCourseRegistration, handleTotalPrice, handleTotalCredit, handleRemainingCredit }) => {
 
     const [courses, setCourses] = useState([])
 
@@ -21,6 +21,8 @@ const Courses = ({ handleCourseRegistration, handleTotalPrice }) => {
                     course={course}
                     handleCourseRegistration={handleCourseRegistration}
                     handleTotalPrice={handleTotalPrice}
+                    handleTotalCredit={handleTotalCredit}
+                    handleRemainingCredit={handleRemainingCredit}
                 ></Course>)
             }
         </div>

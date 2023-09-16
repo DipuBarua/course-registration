@@ -1,7 +1,6 @@
 
 const Bookmark = ({ course }) => {
     const { courseName } = course;
-
     return (
         <div>
             <ol className=" list-disc">

@@ -1,7 +1,7 @@
 import { FiDollarSign } from 'react-icons/fi';
 import { BsBook } from 'react-icons/bs';
 
-const Course = ({ course, handleCourseRegistration, handleTotalPrice }) => {
+const Course = ({ course, handleCourseRegistration, handleTotalPrice, handleTotalCredit, handleRemainingCredit }) => {
     const { image, courseName, details, price, credit } = course;
     return (
         <div>
@@ -22,7 +22,7 @@ const Course = ({ course, handleCourseRegistration, handleTotalPrice }) => {
                         <span>Credit : {credit}hr</span>
                     </div>
                 </div>
-                <button onClick={() => { handleCourseRegistration(course); handleTotalPrice(price) }} className=" w-full bg-blue-500 rounded-lg p-2 text-white">Select</button>
+                <button onClick={() => { handleCourseRegistration(course); handleTotalPrice(price); handleTotalCredit(credit); handleRemainingCredit(credit) }} className=" w-full bg-blue-500 rounded-lg p-2 text-white">Select</button>
             </div>
         </div>
 
