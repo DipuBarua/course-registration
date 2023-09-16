@@ -1,3 +1,6 @@
+// toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css'
 import Header from './components/Header/Header'
@@ -16,28 +19,49 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const handleTotalPrice = (price) => {
     const newTotalPrice = price + totalPrice;
-    setTotalPrice(newTotalPrice);
+    const newTotalPriceFixed = + newTotalPrice.toFixed(2);
+    setTotalPrice(newTotalPriceFixed);
   };
-  // console.log(totalPrice);
+
 
   // Total Credit 
   const [totalCredit, setTotalCredit] = useState(0);
   const handleTotalCredit = (credit) => {
     const newTotalCredit = totalCredit + credit;
-    setTotalCredit(newTotalCredit);
+
+    if (newTotalCredit <= 20) {
+      setTotalCredit(newTotalCredit);
+    }
+    else {
+      console.log('more than 20cr');
+      notify();//call toast
+      setTotalCredit(0)
+      setTotalPrice(0)
+      setCourses([])
+    }
   };
-  // console.log('totalCredit:', totalCredit);
+
 
   // Remaining Credit
   const [remainingCredit, setRemainingCredit] = useState(20);
   const handleRemainingCredit = (credit) => {
     const newRemainingCredit = remainingCredit - credit;
-    setRemainingCredit(newRemainingCredit);
+
+    if (newRemainingCredit < 0) {
+      setRemainingCredit(20);
+    }
+    else {
+      setRemainingCredit(newRemainingCredit);
+    }
   };
-  // console.log('remainingCredit:', remainingCredit);
+
+// toast function
+  const notify = () => toast("Credit Limit Over!");
 
   return (
     <>
+      <ToastContainer />
+
       <Header></Header>
       <div className='flex mx-auto'>
         <Courses
